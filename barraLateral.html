@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <style>
+    body {
+    font-family: 'Raleway';font-size: 22px;
+    }
+    </style>
+  </head>
+  <body bgcolor="white">
+    <h2>Esta es la barra lateral.</h2>
+    <p>aquí va un texto:</p>
+    <form>
+      <label>Pregunta 1</label>
+      <input id="filtroTerritorio" placeholder="aqui dato">
+      <input id="filtroTerritorio2" placeholder="aqui dato2">
+      <button id="boton"> enviar datos</button>
+    </form>
+    <script>
+      // funcion cuando le den clic al boton
+      document.getElementById("boton").addEventListener("click",enviarRespuesta);
+      
+      function enviarRespuesta(){
+		
+        // traemos los valores de los input mediante si ID
+        var numeroDeInput= document.getElementById("filtroTerritorio").value;
+        var nuevoDato= Number(numeroDeInput)+3;
+        
+        var numeroDeInput2= document.getElementById("filtroTerritorio2").value;
+        var nuevoDato2= numeroDeInput2;
+		
+        //se va a ejecutar la funcion del gas enviándole dos arumentos
+        google.script.run.pegarEnCelda(nuevoDato,nuevoDato2); 
+      }
+    </script>
+  </body>
+</html>
+
+
